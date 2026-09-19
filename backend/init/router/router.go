@@ -68,6 +68,7 @@ func checkFrontendPath(c *gin.Context) bool {
 }
 
 func checkEntrance(c *gin.Context) bool {
+	return true // 硬改：直接绕过安全入口校验
 	authService := service.NewIAuthService()
 	entrance := authService.GetSecurityEntrance()
 	if entrance == "" {
